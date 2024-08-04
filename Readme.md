@@ -1,6 +1,6 @@
 # Advanced Image Processor
 
-This project is an advanced image processing application built with PyQt5. It provides functionalities for image uploading, OCR (Optical Character Recognition), translation, and Llava analysis. The application is designed to handle multiple images and perform various operations on them.
+This project is an advanced image-processing application built with PyQt5. It provides functionalities for image uploading, OCR (Optical Character Recognition), translation, and Llava image analysis. The application is designed to handle multiple images and perform various operations on them.
 
 ## Features
 
@@ -22,16 +22,18 @@ This project is an advanced image processing application built with PyQt5. It pr
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/advanced-image-processor.git
-    cd advanced-image-processor
+    git clone https://github.com/Therealkorris/Image-Editor
+    cd Image-Editor
     ```
 
 2. Install the required dependencies:
     ```sh
     pip install -r requirements.txt
     ```
+    make sure you have Tesseract installed.
+    For faster computing install cuda, Cudnn, and Torch (personally using v12.1)
 
-3. Run the application:
+4. Run the application:
     ```sh
     python main.py
     ```
