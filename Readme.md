@@ -1,12 +1,10 @@
 # Advanced Image Processor
 
-<<<<<<< HEAD
 ## Description
 
 The Advanced Image Processor is a powerful Python-based application that provides a comprehensive suite of image processing, OCR (Optical Character Recognition), translation, and AI-powered image analysis tools. Built with PyQt5, this desktop application offers an intuitive graphical user interface for manipulating and analyzing images.
 =======
 This project is an advanced image-processing application built with PyQt5. It provides functionalities for image uploading, OCR (Optical Character Recognition), translation, and Llava image analysis. The application is designed to handle multiple images and perform various operations on them.
->>>>>>> f02035b329155d09bf14492d4aaed1d3cd102a11
 
 ## Features
 
