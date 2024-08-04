@@ -1,8 +1,6 @@
 # Advanced Image Processor
 
-## Description
-
-The Advanced Image Processor is a powerful Python-based application that provides a comprehensive suite of image processing, OCR (Optical Character Recognition), translation, and AI-powered image analysis tools. Built with PyQt5, this desktop application offers an intuitive graphical user interface for manipulating and analyzing images.
+This project is an advanced image processing application built with PyQt5. It provides functionalities for image uploading, OCR (Optical Character Recognition), translation, and Llava analysis. The application is designed to handle multiple images and perform various operations on them.
 
 ## Features
 
@@ -37,37 +35,21 @@ The Advanced Image Processor is a powerful Python-based application that provide
 
 ## Installation
 
-1. Clone this repository:
-   ```
-   git clone https://github.com/Therealkorris/Image-Editor
-   cd Image-Editor
-   ```
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/yourusername/advanced-image-processor.git
+    cd advanced-image-processor
+    ```
 
-2. Create a virtual environment (recommended):
-   ```
-   python -m venv venv
-   source venv/bin/activate  # On Windows, use: venv\Scripts\activate
-   ```
+2. Install the required dependencies:
+    ```sh
+    pip install -r requirements.txt
+    ```
 
-3. Install the required packages:
-   ```
-   pip install -r requirements.txt
-   ```
-
-4. Install Tesseract OCR:
-   - For Windows: Download and install from [GitHub Tesseract OCR repository](https://github.com/UB-Mannheim/tesseract/wiki)
-   - For macOS: `brew install tesseract`
-   - For Linux: `sudo apt-get install tesseract-ocr`
-
-5. Install Ollama for Llava integration:
-   - Follow the instructions at [Ollama's official website](https://ollama.ai/)
-
-6. Install Cuda and CuDNN for faster GPU processing:
-   - Follow the instructions at [NVIDIA's official website](https://developer.nvidia.com/cuda-downloads)
-   - Install the required packages:
-     ```
-     pip install torch torchvision
-     ```
+3. Run the application:
+    ```sh
+    python main.py
+    ```
 
 ## Usage
 
