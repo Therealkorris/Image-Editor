@@ -93,7 +93,7 @@ class ImageFrame(QWidget):
             self.selections.append([p for p in self.current_selection if p is not None])
             self.current_selection = None
             self.update()
-            self.selection_changed.emit()
+            self.selection_changed.emit()  # This line should now work
 
     def map_to_image_coordinates(self, point):
         if not self.scaled_pixmap:

@@ -1,23 +1,26 @@
 from PyQt5.QtCore import QRunnable, pyqtSlot, pyqtSignal, QObject
 import ollama
-import os
+import cv2
+import base64
 
 class WorkerSignals(QObject):
     result = pyqtSignal(str, int)
 
 class LlavaWorker(QRunnable):
-    def __init__(self, image_path, image_index):
+    def __init__(self, image_data, image_index):
         super().__init__()
-        self.image_path = image_path
+        self.image_data = image_data
         self.image_index = image_index
         self.signals = WorkerSignals()
 
     @pyqtSlot()
     def run(self):
         try:
-            print(f"LlavaWorker: Starting analysis for image {self.image_index}: {self.image_path}")
-            if not os.path.exists(self.image_path):
-                raise FileNotFoundError(f"Image file not found: {self.image_path}")
+            print(f"LlavaWorker: Starting analysis for image {self.image_index}")
+            
+            # Convert image data to base64
+            _, buffer = cv2.imencode('.png', self.image_data)
+            base64_image = base64.b64encode(buffer).decode('utf-8')
 
             print(f"LlavaWorker: Calling ollama.chat for image {self.image_index}")
             res = ollama.chat(
@@ -26,7 +29,7 @@ class LlavaWorker(QRunnable):
                     {
                         'role': 'user',
                         'content': 'Describe the image: I want the data presented in this way: Name, HP, Card number',
-                        'images': [self.image_path]
+                        'images': [base64_image]
                     }
                 ]
             )

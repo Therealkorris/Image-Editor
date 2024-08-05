@@ -394,6 +394,7 @@ class ImageProcessor(QWidget):
         print(f"Started {len(self.llava_workers)} Llava analysis workers")
         self.llava_analysis_in_progress = False
 
+
     def update_llava_result(self, result, image_index):
         print(f"Received Llava result for image {image_index}")
         if image_index < len(self.llava_results):

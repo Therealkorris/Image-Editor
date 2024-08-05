@@ -1,5 +1,5 @@
 from PyQt5.QtCore import QThread, pyqtSignal
-from googletrans import Translator
+from translate import Translator
 
 class TranslationWorker(QThread):
     finished = pyqtSignal(str, str)
@@ -8,11 +8,11 @@ class TranslationWorker(QThread):
         super().__init__()
         self.text = text
         self.dest = dest
-        self.translator = Translator()
+        self.translator = Translator(to_lang=self.dest)
 
     def run(self):
         try:
-            translated = self.translator.translate(self.text, dest=self.dest)
-            self.finished.emit(translated.text, 'success')
+            translated = self.translator.translate(self.text)
+            self.finished.emit(translated, 'success')
         except Exception as e:
             self.finished.emit(str(e), 'error')
