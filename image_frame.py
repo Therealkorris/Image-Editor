@@ -1,9 +1,11 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout
-from PyQt5.QtCore import Qt, QPoint, QRect
+from PyQt5.QtCore import Qt, QPoint, QRect, pyqtSignal
 from PyQt5.QtGui import QPainter, QPen, QColor, QPixmap, QImage, QPolygon
 import cv2
 
 class ImageFrame(QWidget):
+    selection_changed = pyqtSignal()  # Define the signal here
+
     def __init__(self, parent=None):
         super().__init__(parent)
         self.image = None
